@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Jakaś Strona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #050816;
+            color: #525969;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid #1f2937;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #275146;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #a1b3ad;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #436058;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .hero-text {
+            flex: 1 1 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 span {
+            color: #4b6874;
+        }
+
+        .hero-text p {
+            color: #4b5057;
+            max-width: 500px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.1);
+            color: #596a71;
+            font-size: 0.8rem;
+        }
+
+        .hero-photo {
+            flex: 0 0 220px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-photo-inner {
+            width: 200px;
+            height: 200px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 20%, #38bdf8, #4f46e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0b1120;
+            box-shadow: 0 0 40px rgba(80, 100, 109, 0.4);
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            color: #9ca3af;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #0b1120;
+            border-radius: 12px;
+            padding: 18px 16px;
+            border: 1px solid #1f2937;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.9);
+            border-color: #921a1a;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .tag-list {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag,
+        a.tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(148, 163, 184, 0.15);
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        a.tag:hover {
+            background: rgba(56, 248, 171, 0.25);
+            color: #ffffff;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #1d2433, #020617);
+            border-radius: 16px;
+            padding: 20px 18px;
+            border: 1px solid #1f2937;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        .contact-item {
+            margin-top: 6px;
+            color: #e5e7eb;
+        }
+
+        .contact-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9ca3af;
+        }
+
+        .contact-value {
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #6b7280;
+            border-top: 1px solid #1f2937;
+            background: #020617;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 16px 18px;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-photo-inner {
+                width: 160px;
+                height: 160px;
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Zuzanna.dev</div>
+        <nav>
+            <a href="#o-mnie">O mnie</a>
+            <a href="#projekty">Projekty</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Cześć, jestem <span>Zuzanna</span> 👋😊</h1>
+                <p>
+                    Mam 15 lat i uczę się programowania. Lubię tworzyć proste strony internetowe,
+                    eksperymentować z HTML, CSS i JavaScript oraz krok po kroku rozwijać swoje umiejętności.
+                </p>
+                <div class="hero-badge">początkująca🚀</div>
+            </div>
+            <div class="hero-photo">
+                <div class="hero-photo-inner">
+                    Z
+                </div>
+            </div>
+        </section>
+
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            <p>
+                Interesuję się programowaniem, muzyką i nowymi technologiami. Lubię uczyć się poprzez
+                praktykę – tworząc małe projekty, testując nowe pomysły i poprawiając to, co już zrobiłam.
+                Ta strona jest jednym z moich kroków w stronę zostania lepszą programistką.
+            </p>
+        </section>
+
+        <section id="projekty">
+    <h2>Moje projekty</h2>
+    <p>Oto kilka rzeczy, które planuję stworzyć. Projekty pojawią się tutaj, gdy będą gotowe:</p>
+
+    <div class="cards">
+
+        <a href="http://127.0.0.1:5500/klkl/html/hthrhrt.html" class="card disabled">
+            <h3>Coś</h3>
+            <p>pojawi się tutaj wkrótce.</p>
+            <div class="tag-list">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+            </div>
+        </a>
+
+        <a href="http://127.0.0.1:5500/klkl/html/rh4rjh4rh.html" class="card disabled">
+            <h3>tu coś będzie</h3>
+            <p>w trakcie planowania.</p>
+            <div class="tag-list">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Nauka</span>
+            </div>
+        </a>
+
+        <a href="http://127.0.0.1:5500/klkl/html/jhrhkgk.html" class="card disabled">
+            <h3>Coś tu także będzie</h3>
+            <p>już niedługo.</p>
+            <div class="tag-list">
+                <span class="tag">JS</span>
+                <span class="tag">Projekt</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+
+        <section id="zainteresowania">
+            <h3>Zainteresowania</h3>
+            <p>
+                Poza programowaniem lubię słuchać muzyki, szkicować, odkrywać nowe rzeczy w internecie
+                i uczyć się tego, jak działają strony oraz aplikacje. Lubię też widzieć postęp –
+                nawet małe kroki do przodu dają mi satysfakcję.
+            </p>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <div class="contact-box">
+                <p>kontak do mnie</p>
+                <div class="contact-item">
+                    <div class="contact-label">E-mail</div>
+                    <div class="contact-value">zuzaware@gmail.com </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Zuzanna – uczę się programowania krok po kroku.
+    </footer>
+
+    <script>
+        // Ustawianie aktualnego roku w stopce
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
